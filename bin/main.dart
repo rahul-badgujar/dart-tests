@@ -10,7 +10,6 @@ Future<void> main() async {
   final user =
       User(name: 'Rahul Badgujar', email: 'rahul@tenfins', city: 'Nashik');
   print('User object 32 bit hash: ${user.hash32bitString}');
-  print('User object 32 bit hash: ${user.hash32bitString.length}');
 }
 
 Future<void> configHive() async {
