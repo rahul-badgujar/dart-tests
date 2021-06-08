@@ -1,5 +1,3 @@
-import 'package:hive/hive.dart';
-
 import 'hive_box.dart';
 
 class CounterBox extends HiveBox<int> {
