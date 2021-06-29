@@ -17,7 +17,7 @@ Future<void> configHive() async {
 Future<void> configServer() async {
   final app = Alfred();
 
-  app.all('/example', (req, res) => 'Hello world');
+  app.all('/example', (req, res) => 'Hello rahul');
 
   app.get('/uidForEmail/:email', (req, res) {
     final email = req.params['email'];
