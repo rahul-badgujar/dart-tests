@@ -2,14 +2,10 @@ import 'package:alfred/alfred.dart';
 import 'package:hive/hive.dart';
 import 'hive/counter_box.dart';
 import 'hive/email_to_uid_box.dart';
-import 'models/user.dart';
 
 Future<void> main() async {
   await configHive();
-  //await configServer();
-  final user =
-      User(name: 'Rahul Badgujar', email: 'rahul@tenfins', city: 'Nashik');
-  print('User object 32 bit hash: ${user.hash32bitString}');
+  await configServer();
 }
 
 Future<void> configHive() async {
