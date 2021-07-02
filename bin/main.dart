@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:alfred/alfred.dart';
 import 'package:hive/hive.dart';
 import 'hive/counter_box.dart';
@@ -17,7 +19,16 @@ Future<void> configHive() async {
 Future<void> configServer() async {
   final app = Alfred();
 
-  app.all('/example', (req, res) => 'Hello rahul bhai kaise ho');
+  app.all('/example', (req, res) => 'Hello bhai... jaldi se fuck off ho jaa');
+
+  app.post('/postreceive', (req, res) async {
+    final body = await req.body;
+    final bodyJson = json.decode(body.toString());
+    final ts = DateTime.now();
+    print('POST-RECEIVE');
+    print('At: $ts');
+    print('Body: $bodyJson');
+  });
 
   app.get('/uidForEmail/:email', (req, res) {
     final email = req.params['email'];
@@ -31,5 +42,5 @@ Future<void> configServer() async {
     };
   });
 
-  await app.listen(8000);
+  await app.listen(3005);
 }
